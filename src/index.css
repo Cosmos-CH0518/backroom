@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body, #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    background-color: #0b0c09;
+    color: #e5e5e0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+}
+
+/* Custom VHS and CRT noise animation */
+@keyframes vhsFlicker {
+  0% { opacity: 0.95; }
+  50% { opacity: 1.0; }
+  55% { opacity: 0.88; }
+  60% { opacity: 0.98; }
+  100% { opacity: 0.95; }
+}
+
+@keyframes scanlines {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100%); }
+}
+
+.vhs-crt-overlay {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
+
+.glitch-noise {
+  animation: vhsFlicker 0.15s infinite;
+}
+

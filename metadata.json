@@ -1,0 +1,6 @@
+{
+  "name": "The Backrooms 3D",
+  "description": "3D Backrooms exploration game with dual virtual joysticks and touch camera look controls for mobile devices.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
